@@ -648,8 +648,22 @@ footer .logo {
   .nido-step, .sem, .opt, .tag, .insight,
   .why, .about, .cycle-v2, .cv2-node,
   .instruction-box, .method-intro, .cta-block { break-inside: avoid; }
-  /* Saltos de página antes de secciones principales */
+  /* Saltos de página */
   #s-nido, #s-semaforo, #s-about { break-before: page; }
+  #s-nido { break-after: page; }
+
+  /* Método NIDO compacto para entrar en una sola hoja */
+  #s-nido { padding: 14px 0 10px; }
+  #s-nido .method-intro { padding: 18px 20px 14px; margin-bottom: 10px; }
+  #s-nido .method-intro .method-logo { height: 38px; margin-bottom: 10px; }
+  #s-nido .method-intro h2 { font-size: 1.45rem; margin-bottom: 6px; }
+  #s-nido .method-intro p { font-size: .82rem; line-height: 1.5; }
+  #s-nido .nido-steps { gap: 7px; margin-bottom: 10px; }
+  #s-nido .nido-step { padding: 14px 16px; gap: 14px; }
+  #s-nido .nido-step-letter { font-size: 3.2rem; width: 48px; }
+  #s-nido .nido-step-name { font-size: .92rem; margin-bottom: 3px; }
+  #s-nido .nido-step-desc { font-size: .8rem; line-height: 1.45; }
+  #s-nido .golden { font-size: .9rem; margin-top: 8px; }
   /* Reducir sombras y decoraciones en print */
   .nido-step, .sem, .about, .opt {
     box-shadow: none !important;
