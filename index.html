@@ -631,17 +631,42 @@ footer .logo {
 
 /* ---- Print ---- */
 @media print {
-  body { background: #fff; font-size: 12pt; }
+  body { background: #fff; font-size: 11pt; }
   .topbar { display: none; }
-  section, .hero { padding: 24px 0; }
-  .insight, .sem, .about, .why, .tag, .opt, .cycle, .nido-step { break-inside: avoid; }
-  section { break-inside: avoid-page; }
+  .print-header {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 0 12px;
+    border-bottom: 2px solid #e6ddd2;
+    margin-bottom: 0;
+  }
+  .print-header img { height: 62px; width: auto; }
+  section, .hero { padding: 20px 0; }
+  footer { padding: 20px 0 30px; }
+  /* Elementos que nunca se cortan */
+  .nido-step, .sem, .opt, .tag, .insight,
+  .why, .about, .cycle-v2, .cv2-node,
+  .instruction-box, .method-intro, .cta-block { break-inside: avoid; }
+  /* Saltos de página antes de secciones principales */
+  #s-nido, #s-semaforo, #s-about { break-before: page; }
+  /* Reducir sombras y decoraciones en print */
+  .nido-step, .sem, .about, .opt {
+    box-shadow: none !important;
+    border: 1px solid #d5ccc2 !important;
+  }
   .cta { box-shadow: none; }
+  .nido-step::after { display: none; }
 }
 * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 </style>
 </head>
 <body>
+
+<!-- ENCABEZADO SOLO PARA PDF/PRINT -->
+<div class="print-header" style="display:none;">
+  <img src="Imagenes/logo-nido-sin-fondo.png" alt="Método NIDO®">
+</div>
 
 <!-- TOPBAR -->
 <nav class="topbar">
@@ -728,7 +753,7 @@ footer .logo {
 </section>
 
 <!-- MÉTODO NIDO -->
-<section>
+<section id="s-nido">
   <div class="wrap">
     <p class="kicker">La salida</p>
     <div class="method-intro">
@@ -804,7 +829,7 @@ footer .logo {
 </section>
 
 <!-- SEMÁFORO -->
-<section>
+<section id="s-semaforo">
   <div class="wrap">
     <p class="kicker">El segundo movimiento</p>
     <h2>Aprende a leer su color</h2>
@@ -882,7 +907,7 @@ footer .logo {
 </section>
 
 <!-- SOBRE CARLA -->
-<section>
+<section id="s-about">
   <div class="wrap">
     <div class="about">
       <img src="Imagenes/carla-romo.png" alt="Carla Romo Salcedo" class="portrait">
