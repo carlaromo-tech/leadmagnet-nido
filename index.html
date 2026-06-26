@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10 minutos al día para volver a conectar con tu adolescente · Conectar con Sentido</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Marca */
+    --cream:#FBF7F2;
+    --paper:#FFFFFF;
+    --navy:#1E2D3D;
+    --navy-soft:#3a4856;
+    --turquoise:#3E8DA1;
+    --turquoise-deep:#2f6f80;
+    --coral:#EA8672;
+    --rose:#E07688;
+    /* Semáforo, armonizado con la marca */
+    --verde:#4F8A6B;
+    --amarillo:#D79A45;
+    --rojo:#E2725B;
+    /* Sistema */
+    --line:#e6ddd2;
+    --tint:#f3ece2;
+    --maxw:760px;
+    --display:"Fraunces", Georgia, serif;
+    --body:"Inter", system-ui, -apple-system, sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--navy);
+    font-family:var(--body);
+    font-size:18px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- Tipografía base ---------- */
+  h1,h2,h3{font-family:var(--display);font-weight:500;color:var(--navy);margin:0;line-height:1.14;}
+  p{margin:0 0 1.05em;color:var(--navy-soft);}
+  strong{color:var(--navy);font-weight:600;}
+  em{font-style:italic;}
+  .lead{font-size:1.06rem;color:var(--navy-soft);}
+
+  .eyebrow{
+    font-family:var(--body);
+    font-size:.72rem;
+    font-weight:600;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--turquoise-deep);
+    margin:0 0 1.4rem;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:84px 0 64px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero .hook{
+    font-family:var(--display);
+    font-size:clamp(2.1rem,5.2vw,3.35rem);
+    font-weight:500;
+    line-height:1.1;
+    letter-spacing:-.01em;
+    margin:0 0 1.3rem;
+  }
+  .hero .turn{
+    font-family:var(--display);
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(1.25rem,2.8vw,1.7rem);
+    line-height:1.35;
+    color:var(--turquoise-deep);
+    margin:0 0 1.8rem;
+    max-width:36ch;
+  }
+  .hero .promise{font-size:1.08rem;max-width:48ch;}
+  .hero .tag{
+    margin-top:1.6rem;
+    padding:18px 22px;
+    background:var(--tint);
+    border-left:3px solid var(--coral);
+    border-radius:0 10px 10px 0;
+    font-style:italic;
+    color:var(--navy-soft);
+    font-size:.98rem;
+  }
+  .hero .tag p{margin:0;}
+  .byline{
+    margin-top:2.4rem;
+    font-size:.86rem;
+    color:var(--navy-soft);
+    line-height:1.5;
+  }
+  .byline strong{color:var(--navy);}
+
+  /* placeholder de foto (opcional) */
+  .cover-photo{
+    margin:2.4rem 0 0;
+    aspect-ratio:16/7;
+    width:100%;
+    border:1px dashed #cbbfae;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#b6a892;
+    font-size:.8rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    background:
+      repeating-linear-gradient(45deg,transparent,transparent 12px,rgba(0,0,0,.015) 12px,rgba(0,0,0,.015) 24px),
+      var(--tint);
+  }
+
+  /* ---------- Secciones ---------- */
+  section{padding:58px 0;}
+  section + section{border-top:1px solid var(--line);}
+  .kicker{
+    font-family:var(--body);
+    font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--coral);margin:0 0 .9rem;
+  }
+  h2{font-size:clamp(1.65rem,3.4vw,2.15rem);margin:0 0 1.2rem;}
+
+  /* checklist */
+  .check{list-style:none;margin:0;padding:0;}
+  .check li{
+    position:relative;padding:16px 0 16px 44px;
+    border-bottom:1px solid var(--line);
+    color:var(--navy-soft);font-size:1.02rem;
+    line-height:1.55;
+  }
+  .check li:last-child{border-bottom:none;}
+  .check li::before{
+    content:"✓";
+    position:absolute;left:0;top:17px;
+    width:24px;height:24px;border-radius:50%;
+    background:var(--turquoise);
+    color:#fff;
+    font-size:.72rem;
+    font-weight:700;
+    text-align:center;
+    line-height:24px;
+  }
+  .reassure{
+    margin-top:1.6rem;font-family:var(--display);font-style:italic;
+    font-size:1.18rem;color:var(--navy);line-height:1.4;
+  }
+
+  /* escena + ciclo */
+  .scene{
+    font-size:1.06rem;color:var(--navy);
+    border-left:3px solid var(--turquoise);
+    padding-left:20px;margin:0 0 1.6rem;
+  }
+  .cycle{
+    display:flex;flex-wrap:wrap;align-items:center;gap:6px 4px;
+    background:var(--tint);border-radius:12px;padding:20px 22px;
+    margin:1.6rem 0;font-weight:600;color:var(--navy);font-size:.96rem;
+  }
+  .cycle span{white-space:nowrap;}
+  .cycle .arr{color:var(--coral);font-weight:700;padding:0 2px;}
+  .insight{
+    background:var(--navy);color:#eef3f4;border-radius:14px;
+    padding:26px 28px;margin-top:1.8rem;
+  }
+  .insight p{color:#dde7ea;margin:0;}
+  .insight strong{color:#fff;}
+  .insight em{color:#9fd0db;font-style:italic;}
+
+  /* ---------- Tarjetas NIDO — letra protagonista ---------- */
+  .nido-steps{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    margin:0 0 1.6rem;
+  }
+  .nido-step{
+    display:flex;
+    align-items:flex-start;
+    gap:22px;
+    background:var(--paper);
+    border-radius:18px;
+    border:1px solid var(--line);
+    padding:28px 30px;
+    box-shadow:0 3px 18px rgba(30,45,61,.07);
+    position:relative;
+    overflow:hidden;
+  }
+  /* ghost decorativo en fondo */
+  .nido-step::after{
+    content:attr(data-letter);
+    position:absolute;
+    right:-14px;bottom:-28px;
+    font-family:var(--display);
+    font-weight:600;
+    font-size:11rem;
+    line-height:1;
+    opacity:.05;
+    pointer-events:none;
+    user-select:none;
+  }
+  /* borde superior de color */
+  .step-n{border-top:4px solid var(--turquoise);}
+  .step-n .nido-step-letter{color:var(--turquoise);}
+  .step-n::after{color:var(--turquoise);}
+  .step-i{border-top:4px solid var(--coral);}
+  .step-i .nido-step-letter{color:var(--coral);}
+  .step-i::after{color:var(--coral);}
+  .step-d{border-top:4px solid var(--turquoise-deep);}
+  .step-d .nido-step-letter{color:var(--turquoise-deep);}
+  .step-d::after{color:var(--turquoise-deep);}
+  .step-o{border-top:4px solid var(--rose);}
+  .step-o .nido-step-letter{color:var(--rose);}
+  .step-o::after{color:var(--rose);}
+  /* letra grande */
+  .nido-step-letter{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:5.5rem;
+    line-height:.9;
+    flex-shrink:0;
+    display:block;
+    width:72px;
+    text-align:center;
+    margin-top:2px;
+  }
+  .nido-step-content{
+    flex:1;
+    padding-top:4px;
+  }
+  .nido-step-name{
+    font-family:var(--body);
+    font-weight:700;
+    font-size:1.12rem;
+    color:var(--navy);
+    display:block;
+    margin-bottom:7px;
+    letter-spacing:-.01em;
+  }
+  .nido-step-desc{
+    font-size:.95rem;
+    color:var(--navy-soft);
+    margin:0;
+    line-height:1.6;
+  }
+
+  .golden{
+    font-family:var(--display);font-style:italic;font-size:1.15rem;
+    color:var(--navy);text-align:center;margin:1.4rem 0 0;
+  }
+
+  /* paso N */
+  .options{margin:1.6rem 0;}
+  .options-title{font-weight:600;color:var(--navy);margin-bottom:.9rem;}
+  .opt{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px 22px 22px 76px;
+    margin-bottom:12px;
+    position:relative;
+  }
+  .opt-num{
+    position:absolute;left:20px;top:20px;
+    font-family:var(--display);font-weight:600;
+    font-size:2rem;line-height:1;
+  }
+  .opt-title{
+    display:block;
+    color:var(--navy);
+    font-weight:700;
+    font-size:1rem;
+    margin-bottom:5px;
+  }
+  .opt p{margin:0;color:var(--navy-soft);font-size:.96rem;line-height:1.55;}
+  .opt-1{border-left:3px solid var(--turquoise);}
+  .opt-1 .opt-num{color:var(--turquoise);}
+  .opt-2{border-left:3px solid var(--coral);}
+  .opt-2 .opt-num{color:var(--coral);}
+
+  /* semáforo — la firma */
+  .semaforo{display:flex;flex-direction:column;gap:16px;margin:1.8rem 0;}
+  .sem{
+    display:grid;grid-template-columns:14px 1fr;gap:22px;
+    background:var(--paper);border:1px solid var(--line);border-radius:16px;
+    padding:24px 26px;overflow:hidden;position:relative;
+  }
+  .sem .bar{border-radius:8px;}
+  .sem-verde .bar{background:var(--verde);}
+  .sem-amarillo .bar{background:var(--amarillo);}
+  .sem-rojo .bar{background:var(--rojo);}
+  .sem-label{
+    font-family:var(--body);font-size:.78rem;font-weight:700;letter-spacing:.1em;
+    text-transform:uppercase;margin-bottom:.4rem;
+  }
+  .sem-verde .sem-label{color:var(--verde);}
+  .sem-amarillo .sem-label{color:#b87f2f;}
+  .sem-rojo .sem-label{color:var(--rojo);}
+  .sem-verb{
+    font-family:var(--display);font-weight:600;font-size:2.1rem;line-height:1;
+    color:var(--navy);margin-bottom:.5rem;
+  }
+  .sem-text{color:var(--navy-soft);font-size:.98rem;margin:0;}
+  .sem-text .q{color:var(--navy);font-style:italic;}
+  .three-verbs{
+    text-align:center;font-family:var(--display);font-size:1.15rem;color:var(--navy);
+    margin:.4rem 0 1.6rem;
+  }
+  .three-verbs b{color:var(--turquoise-deep);}
+
+  /* por qué funciona */
+  .why{background:var(--tint);border-radius:16px;padding:28px;}
+  .why-items{display:flex;flex-direction:column;margin-bottom:24px;}
+  .why-item{
+    display:grid;grid-template-columns:36px 1fr;gap:16px;
+    padding:18px 0;border-bottom:1px solid rgba(30,45,61,.08);
+    align-items:start;
+  }
+  .why-item:last-child{border-bottom:none;padding-bottom:0;}
+  .why-num{
+    font-family:var(--display);font-weight:600;font-size:1.4rem;
+    color:var(--turquoise);line-height:1.3;
+  }
+  .why-text{margin:0;color:var(--navy-soft);font-size:.98rem;line-height:1.6;}
+  .why-quote{
+    background:var(--navy);color:#fff;
+    border-radius:12px;padding:22px 26px;
+    font-family:var(--display);font-style:italic;
+    font-size:1.2rem;line-height:1.45;
+    text-align:center;margin:0;
+  }
+
+  /* empieza hoy / CDA */
+  .cta-block{text-align:center;margin:2rem 0 1.2rem;}
+  .cta{
+    display:inline-block;background:var(--coral);color:#fff;text-decoration:none;
+    font-family:var(--body);font-weight:600;font-size:1.02rem;
+    padding:16px 34px;border-radius:999px;
+    transition:transform .15s ease, background .15s ease;
+    box-shadow:0 6px 18px rgba(234,134,114,.28);
+  }
+  .cta:hover{background:#e0735d;transform:translateY(-1px);}
+  .cta:focus-visible{outline:3px solid var(--turquoise);outline-offset:3px;}
+  .cta-line{font-weight:600;color:var(--navy);margin-bottom:1.2rem;font-size:1.05rem;}
+  .care{
+    font-size:.86rem;color:#8a8073;font-style:italic;
+    border-top:1px solid var(--line);padding-top:18px;margin-top:1.6rem;
+  }
+  .eval-name{color:var(--turquoise-deep);font-weight:600;}
+
+  /* Carla */
+  .about{
+    display:grid;grid-template-columns:120px 1fr;gap:28px;align-items:start;
+    background:var(--paper);border:1px solid var(--line);border-radius:18px;
+    padding:30px;
+  }
+  .portrait{
+    width:120px;height:120px;border-radius:50%;
+    object-fit:cover;object-position:center top;
+    border:3px solid var(--line);
+    display:block;flex-shrink:0;
+  }
+  .about h3{font-family:var(--display);font-size:1.3rem;margin:0 0 .6rem;}
+  .about .creds{font-size:.84rem;color:var(--navy-soft);margin-top:1rem;line-height:1.6;}
+  .about a{color:var(--turquoise-deep);}
+
+  /* footer */
+  footer{
+    text-align:center;padding:40px 0 60px;border-top:1px solid var(--line);
+    font-size:.78rem;color:#a89a86;letter-spacing:.04em;
+  }
+  footer .logo{
+    font-family:var(--display);font-style:italic;font-size:1.1rem;color:var(--navy-soft);
+    margin-bottom:.4rem;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:560px){
+    body{font-size:17px;}
+    .wrap{padding:0 20px;}
+    .hero{padding:60px 0 46px;}
+    .about{grid-template-columns:1fr;gap:18px;text-align:center;justify-items:center;}
+    .nido-step{padding:20px 18px;gap:14px;}
+    .nido-step-letter{font-size:3.8rem;width:52px;}
+    .nido-step::after{font-size:7rem;}
+    .sem{padding:20px;}
+  }
+
+  /* ---------- Imágenes de sección ---------- */
+  .section-img{
+    width:100%;border-radius:12px;display:block;
+    object-fit:cover;object-position:center 30%;
+    aspect-ratio:16/8;
+    margin:1.8rem 0;
+    box-shadow:0 2px 16px rgba(30,45,61,.08);
+  }
+  .section-img-dark{
+    object-position:center center;
+    aspect-ratio:4/3;
+    max-height:340px;
+    margin:1.8rem auto;
+  }
+
+  /* ---------- Topbar con logo ---------- */
+  .topbar{
+    padding:14px 0;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:100;
+  }
+  .topbar-logo{
+    height:48px;width:auto;display:block;
+  }
+
+  /* cover photo real */
+  .cover-photo-img{
+    margin:2.4rem 0 0;
+    width:100%;
+    border-radius:14px;
+    display:block;
+    object-fit:cover;
+    object-position:center 20%;
+    aspect-ratio:16/9;
+    box-shadow:0 4px 24px rgba(30,45,61,.10);
+  }
+
+  /* ---------- Method intro (La salida) ---------- */
+  .method-intro{
+    background:var(--navy);
+    border-radius:18px;
+    padding:40px 28px 32px;
+    text-align:center;
+    margin-bottom:28px;
+  }
+  .method-intro .method-logo{
+    height:58px;width:auto;
+    display:block;margin:0 auto 20px;
+    filter:brightness(0) invert(1);opacity:.88;
+  }
+  .method-intro h2{
+    color:#fff;margin:0 0 14px;
+    font-size:clamp(1.75rem,4vw,2.3rem);
+  }
+  .method-intro p{
+    color:rgba(255,255,255,.68);
+    font-size:.98rem;max-width:44ch;
+    margin:0 auto;line-height:1.65;
+  }
+  .method-intro p strong{color:#fff;}
+
+  /* ---------- Instrucción visual (La N) ---------- */
+  .instruction-box{
+    background:var(--tint);
+    border-left:3px solid var(--turquoise);
+    border-radius:0 14px 14px 0;
+    padding:22px 24px;
+    margin:1.6rem 0;
+  }
+  .instruction-label{
+    font-size:.78rem;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--turquoise-deep);
+    margin:0 0 14px;
+  }
+  .instruction-steps{
+    list-style:none;padding:0;margin:0 0 16px;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .instruction-steps li{
+    display:grid;grid-template-columns:28px 1fr;gap:12px;
+    align-items:start;font-size:1rem;color:var(--navy);line-height:1.5;
+  }
+  .instruction-steps li .step-dot{
+    width:28px;height:28px;border-radius:50%;
+    background:var(--turquoise);color:#fff;
+    font-size:.72rem;font-weight:700;
+    text-align:center;line-height:28px;
+    flex-shrink:0;display:block;
+  }
+  .instruction-note{
+    font-family:var(--display);font-style:italic;
+    font-size:1rem;color:var(--navy);margin:0;
+  }
+
+  /* cierre La N */
+  .n-closing{
+    font-family:var(--display);font-style:italic;
+    font-size:1.05rem;color:var(--navy-soft);
+    text-align:center;
+    border-top:1px solid var(--line);
+    padding-top:18px;margin-top:1.6rem;
+  }
+
+  /* ---------- print / export PDF ---------- */
+  @media print{
+    body{background:#fff;font-size:12pt;}
+    .topbar{display:none;}
+    .cover-photo-img,.portrait{border-color:#ddd;}
+    section,.hero{padding:24px 0;}
+    .insight{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .sem,.nido,.about,.why,.tag,.opt,.cycle{break-inside:avoid;}
+    section{break-inside:avoid-page;}
+    .cta{box-shadow:none;}
+  }
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+</style>
+</head>
+<body>
+
+<!-- ======================= TOPBAR ======================= -->
+<nav class="topbar">
+  <div class="wrap">
+    <img src="Imagenes/Logo sin fondo .png" alt="Método NIDO®" class="topbar-logo">
+  </div>
+</nav>
+
+<!-- ======================= PORTADA ======================= -->
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Guía · 10 minutos al día para volver a conectar</p>
+    <h1 class="hook">Antes sabías qué le pasaba con solo mirarlo. Hoy vive en tu casa y, a ratos, sientes que no sabes quién es.</h1>
+    <p class="turn">La buena noticia: todavía puedes volver a conocerlo, y se empieza con 10 minutos al día.</p>
+    <p class="promise">No necesitas conversaciones perfectas ni las horas que no tienes. Solo estar. Y esos minutos, bien usados, pueden empezar a cambiar el ambiente en tu casa.</p>
+    <div class="tag"><p>Si llegas a la casa sin energía y aún así te preocupa cómo está tu hijo, esto es para ti. No es una tarea más: es un gesto pequeño que sí puedes sostener.</p></div>
+
+    <img src="Imagenes/uSJqm2nqyxTxNXD0F1lbc.png" alt="Madre conectando con su hijo adolescente" class="cover-photo-img">
+
+    <p class="byline"><strong>Carla Romo Salcedo</strong><br>Psicóloga clínica PUC · Creadora del Método NIDO®</p>
+  </div>
+</header>
+
+<!-- ======================= ¿TE SUENA? ======================= -->
+<section>
+  <div class="wrap">
+    <p class="kicker">Para empezar</p>
+    <h2>¿Te suena algo de esto?</h2>
+    <ul class="check">
+      <li>Tu hijo vive entre pantallas, puertas cerradas y monosílabos, y sientes que cada día hay un poco más de distancia.</li>
+      <li>Terminas el día y te das cuenta de que solo le hablaste para apurarlo, corregirlo o pelear.</li>
+      <li>No te queda tiempo ni energía de sobra: trabajo, casa, mil pendientes — y la culpa de no llegar a todo te pesa más de lo que dirías en voz alta.</li>
+      <li>A veces no sabes si lo que ves es propio de la edad o si hay algo más, y no quieres exagerar ni quedarte corta.</li>
+    </ul>
+    <img src="Imagenes/ChatGPT Image 30 ene 2026, 20_56_07.png" alt="Adolescente solo en el sofá con el celular" class="section-img">
+    <p class="reassure">Si te pasó algo de esto, respira. No estás fallando. Estás en una etapa que nadie nos enseñó a navegar.</p>
+  </div>
+</section>
+
+<!-- ======================= MODO SUPERVISOR ======================= -->
+<section>
+  <div class="wrap">
+    <p class="kicker">El patrón invisible</p>
+    <h2>El Modo Supervisor</h2>
+    <p class=”scene”>Tu hijo llega del colegio y, antes de que alcance a dejar la mochila, ya le preguntaste cómo le fue, si comió, si tiene prueba mañana. Tres preguntas en diez segundos. Él contesta “bien” y se mete a su pieza.</p>
+    <img src=”Imagenes/Gemini_Generated_Image_o6oxkdo6oxkdo6ox.png” alt=”Mamá preocupada observando a su hijo en el celular” class=”section-img”>
+    <p>No lo hiciste por controlar. Lo hiciste porque lo quieres y te preocupa. Pero hay un estado en el que caemos casi todas sin darnos cuenta —yo le digo <strong>Modo Supervisor</strong>— donde pasas el día apurando, corrigiendo, revisando. Nace del amor. Y aun así, cierra la conversación.</p>
+    <div class="cycle">
+      <span>Corriges</span><span class="arr">→</span>
+      <span>se cierra</span><span class="arr">→</span>
+      <span>te frustras</span><span class="arr">→</span>
+      <span>corriges más fuerte</span><span class="arr">→</span>
+      <span>se aleja</span>
+    </div>
+    <p>Y no es tu culpa haber caído ahí. Nadie nos enseñó otra forma.</p>
+    <div class="insight">
+      <p>Acá está lo que casi nadie ve: <strong>no necesitas que tu hijo llegue de mal humor para que la conversación se cierre.</strong> Puede llegar tranquilo y abierto — pero si tú entras en Modo Supervisor, se cierra igual. Su cerebro no registra tanto <em>lo que dices</em>, sino <em>el estado desde el que lo dices</em>. A veces el problema no es cómo viene tu hijo. Es cómo entras tú.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= MÉTODO NIDO ======================= -->
+<section>
+  <div class="wrap">
+    <p class="kicker">La salida</p>
+    <div class="method-intro">
+      <img src="Imagenes/Logo sin fondo .png" alt="Método NIDO®" class="method-logo">
+      <h2>10 minutos al día</h2>
+      <p>No necesitas conversaciones perfectas ni horas que no tienes. Necesitas una rutina pequeña: <strong>10 minutos al día, sin pantallas.</strong> Son cuatro movimientos simples que repites cada día:</p>
+    </div>
+    <div class=”nido-steps”>
+      <div class=”nido-step step-n” data-letter=”N”>
+        <span class=”nido-step-letter”>N</span>
+        <div class=”nido-step-content”>
+          <span class=”nido-step-name”>Nota tu estado</span>
+          <p class=”nido-step-desc”>Antes de entrar, te miras a ti: “¿cómo llego yo?”.</p>
+        </div>
+      </div>
+      <div class=”nido-step step-i” data-letter=”I”>
+        <span class=”nido-step-letter”>I</span>
+        <div class=”nido-step-content”>
+          <span class=”nido-step-name”>Interpreta a tu hijo sin juzgar</span>
+          <p class=”nido-step-desc”>Lo observas unos segundos antes de hablar.</p>
+        </div>
+      </div>
+      <div class=”nido-step step-d” data-letter=”D”>
+        <span class=”nido-step-letter”>D</span>
+        <div class=”nido-step-content”>
+          <span class=”nido-step-name”>Diálogo o presencia</span>
+          <p class=”nido-step-desc”>Conversas, escuchas, o simplemente lo acompañas. Tu presencia ya es el mensaje.</p>
+        </div>
+      </div>
+      <div class=”nido-step step-o” data-letter=”O”>
+        <span class=”nido-step-letter”>O</span>
+        <div class=”nido-step-content”>
+          <span class=”nido-step-name”>Oportunidad de cierre</span>
+          <p class=”nido-step-desc”>Cierras con calidez y dejas la puerta abierta.</p>
+        </div>
+      </div>
+    </div>
+    <p class="golden">No buscamos 10 minutos perfectos. Buscamos 10 minutos reales.</p>
+  </div>
+</section>
+
+<!-- ======================= PASO N ======================= -->
+<section>
+  <div class="wrap">
+    <p class="kicker">Empieza por aquí</p>
+    <h2>La N: mírate tú primero</h2>
+    <p>Si solo te llevas una cosa de esta guía, que sea la <strong>N: Nota tu estado</strong>. Es el paso que más cuesta y el que más mueve la aguja.</p>
+    <p>¿Te acuerdas de que el problema no era cómo viene tu hijo, sino cómo entras tú? La N es exactamente eso: <strong>entrar distinto</strong>. No se trata de cambiar a tu hijo antes de abrir la puerta — se trata de cambiar el estado desde el que tú la abres.</p>
+    <div class=”instruction-box”>
+      <p class=”instruction-label”>En concreto, antes de entrar a su pieza:</p>
+      <ol class=”instruction-steps”>
+        <li><span class=”step-dot”>1</span>Deja el celular en otra parte</li>
+        <li><span class=”step-dot”>2</span>Respira hondo tres veces</li>
+        <li><span class=”step-dot”>3</span>Pregúntate: <em>”¿cómo estoy yo ahora?”</em></li>
+      </ol>
+      <p class=”instruction-note”>Ese minuto no es para tu hijo: es para ti. Cuando estás regulada, abres más puertas que cuando estás “correcta”.</p>
+    </div>
+    <div class=”options”>
+      <p class=”options-title”>Dos formas de probarlo esta noche — elige una, no las dos:</p>
+      <div class=”opt opt-1”>
+        <span class=”opt-num”>01</span>
+        <strong class=”opt-title”>Solo aparece.</strong>
+        <p>Entra, quédate cerca, sin esperar nada. Sin preguntas de colegio ni de notas.</p>
+      </div>
+      <div class=”opt opt-2”>
+        <span class=”opt-num”>02</span>
+        <strong class=”opt-title”>Si te rechaza, quédate igual.</strong>
+        <p>”No vengo a retarte, solo a estar contigo.” Si cierra la puerta: “Estoy aquí afuera un rato, por si me necesitas.” Y te quedas.</p>
+      </div>
+    </div>
+    <p class=”n-closing”>A veces el avance es mínimo: menos mala cara, un suspiro, un “ya”. Eso también cuenta.</p>
+  </div>
+</section>
+
+<!-- ======================= SEMÁFORO (firma) ======================= -->
+<section>
+  <div class="wrap">
+    <p class="kicker">El segundo movimiento</p>
+    <h2>Aprende a leer su color</h2>
+    <p>Leer cómo está tu hijo <em>antes</em> de hablarle no es adivinar lo que piensa: es mirar 30 segundos su cara, su tono, su energía, y reconocer uno de tres colores. Cada color te pide un movimiento.</p>
+    <img src="Imagenes/ZXd6mvG-IKHSqsLQdAZi5.png" alt="Adolescente solo en su pieza de noche, luz del celular" class="section-img section-img-dark">
+    <div class="semaforo">
+      <div class="sem sem-verde">
+        <div class="bar"></div>
+        <div>
+          <div class="sem-label">Verde · abierto</div>
+          <div class="sem-verb">Conversa</div>
+          <p class="sem-text">Te mira, responde, hay puerta. Y una sola regla: escucha más de lo que hablas.</p>
+        </div>
+      </div>
+      <div class="sem sem-amarillo">
+        <div class="bar"></div>
+        <div>
+          <div class="sem-label">Amarillo · en la frontera</div>
+          <div class="sem-verb">Ofrece</div>
+          <p class="sem-text">Ni adentro ni afuera. No lo fuerces: dale el control. <span class="q">“¿Prefieres que me quede o vuelvo en un rato?”</span> Que elija ya es conexión.</p>
+        </div>
+      </div>
+      <div class="sem sem-rojo">
+        <div class="bar"></div>
+        <div>
+          <div class="sem-label">Rojo · cerrado</div>
+          <div class="sem-verb">Acompaña</div>
+          <p class="sem-text">Tenso, monosílabos, audífonos. El rojo no se abre con preguntas, se abre con presencia. <span class="q">“No vengo a retarte. Estoy aquí.”</span></p>
+        </div>
+      </div>
+    </div>
+    <p class="three-verbs">Tres colores, tres movimientos: <b>conversa, ofrece, acompaña.</b></p>
+    <p>El cambio de fondo no es aprenderte los colores. Es <strong>dejar de leer el rojo como “está imposible” y empezar a leerlo como “hoy no es por ahí”.</strong> Eso ya no es corregir: es entender. Y sentirse entendido —en vez de corregido— es lo que, con el tiempo, lo invita a volver a abrir la puerta.</p>
+    <p>Ahora bien: el color de <em>un momento</em> lo puedes leer tú. Lo que cuesta es ver el <strong>color de fondo</strong> — si el rojo es de hoy o ya se volvió la temperatura de la casa, si la distancia es la edad o es algo más. Eso es lo más difícil de ver cuando estás adentro, viviéndolo todos los días.</p>
+  </div>
+</section>
+
+<!-- ======================= POR QUÉ FUNCIONA ======================= -->
+<section>
+  <div class="wrap">
+    <p class="kicker">La base</p>
+    <h2>¿Por qué funciona?</h2>
+    <div class=”why”>
+      <div class=”why-items”>
+        <div class=”why-item”>
+          <span class=”why-num”>01</span>
+          <p class=”why-text”>El cerebro de tu hijo está <strong>reorganizándose por completo</strong> en esta etapa. Lo que más necesita no son conversaciones largas — son señales de seguridad cortas y repetidas, no perfectas.</p>
+        </div>
+        <div class=”why-item”>
+          <span class=”why-num”>02</span>
+          <p class=”why-text”>Su sistema nervioso tolera mucho mejor <strong>10 minutos constantes</strong> que un sermón de una hora. La frecuencia importa más que la duración.</p>
+        </div>
+        <div class=”why-item”>
+          <span class=”why-num”>03</span>
+          <p class=”why-text”>Piensa en estos minutos como <strong>semillas que dejas cada día</strong>: no se notan de inmediato, pero se acumulan. El vínculo se construye en capas, no en hitos.</p>
+        </div>
+      </div>
+      <p class=”why-quote”>”Esta persona es un refugio, no un juez.”</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= EMPIEZA HOY / CDA ======================= -->
+<section>
+  <div class="wrap">
+    <p class="kicker">Tu primer paso</p>
+    <h2>Empieza hoy</h2>
+    <p>Elige una hora, ponla en tu calendario, y esta noche solo aparece — sin discurso perfecto, sin expectativas.</p>
+    <p>Y si llevas tiempo sintiendo que algo no anda, o no sabes si lo que ves es la edad o algo más, un gesto solo no alcanza para responder esa pregunta. Para eso existe la <span class="eval-name">Evaluación Familiar del Adolescente</span>: tres sesiones para entender qué está pasando en tu casa y decidir el siguiente paso con claridad. No es terapia larga; es una mirada ordenada, con un informe y un plan.</p>
+    <div class="cta-block">
+      <p class="cta-line">El primer paso es más simple: descubre en qué color está la comunicación en tu casa hoy.</p>
+      <a class="cta" href="#">Quiero hacer el test</a>
+    </div>
+    <p class="care">Si ves señales de riesgo —mucho aislamiento, autolesiones, violencia— busca apoyo profesional y red de protección. Esta rutina acompaña, pero no reemplaza esa ayuda.</p>
+  </div>
+</section>
+
+<!-- ======================= SOBRE CARLA ======================= -->
+<section>
+  <div class="wrap">
+    <div class="about">
+      <img src="Imagenes/carla-romo.png" alt="Carla Romo Salcedo" class="portrait">
+      <div>
+        <h3>Sobre Carla</h3>
+        <p>Soy Carla Romo Salcedo, psicóloga clínica PUC y mamá de adolescentes. Antes de la consulta, pasé 25 años en el mundo del trabajo acompañando a profesionales, y ahí vi, una y otra vez, el mismo patrón: personas exitosas en su carrera que en casa sentían que estaban perdiendo a sus hijos. De esa observación nació el Método NIDO®. Si estás leyendo esto, probablemente conoces ese patrón desde adentro — y mi trabajo es acompañarte antes de que la distancia se vuelva una urgencia.</p>
+        <p class="creds">Psicóloga clínica PUC · Creadora del Método NIDO® · Certificada en Programa PEERS® (UCLA)<br>
+        <a href="mailto:carla.romo@conectarconsentido.com">carla.romo@conectarconsentido.com</a> · Instagram: @conectar_consentido</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="Imagenes/Logo-NIDO-fondo-blanco.png" alt="Método NIDO®" style="height:48px;width:auto;margin-bottom:12px;opacity:.7;">
+    <div class="logo">Conectar con Sentido</div>
+    Método NIDO® · Carla Romo Salcedo
+  </div>
+</footer>
+
+</body>
+</html>
